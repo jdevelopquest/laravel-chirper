@@ -1,3 +1,4 @@
+
 @props(['chirp'])
 
 <div class="card bg-base-100 shadow">
@@ -6,15 +7,15 @@
             @if ($chirp->user)
                 <div class="avatar">
                     <div class="size-10 rounded-full">
-                        <img src="https://avatars.laravel.cloud/{{ urlencode($chirp->user->email) }}"
-                             alt="{{ $chirp->user->name }}'s avatar" class="rounded-full"/>
+                        <img src="https://avatars.laravel.cloud/{{ urlencode($chirp->user->name) }}?vibe=ocean"
+                             alt="{{ $chirp->user->name }}'s avatar" class="rounded-full" />
                     </div>
                 </div>
             @else
                 <div class="avatar placeholder">
                     <div class="size-10 rounded-full">
                         <img src="https://avatars.laravel.cloud/f61123d5-0b27-434c-a4ae-c653c7fc9ed6?vibe=stealth"
-                             alt="Anonymous User" class="rounded-full"/>
+                             alt="Anonymous User" class="rounded-full" />
                     </div>
                 </div>
             @endif
@@ -40,8 +41,8 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit"
-                                        onclick="return confirm('Are you sure you want to delete this chirp?')"
-                                        class="btn btn-ghost btn-xs text-error">
+                                    onclick="return confirm('Are you sure you want to delete this chirp?')"
+                                    class="btn btn-ghost btn-xs text-error">
                                     Delete
                                 </button>
                             </form>
